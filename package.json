@@ -1,0 +1,32 @@
+{
+  "name": "rundown",
+  "description": "Extract and run code blocks from Markdown files",
+  "version": "1.0.0",
+  "homepage": "https://github.com/earldouglas/rundown",
+  "author": {
+    "name": "James Earl Douglas",
+    "email": "james@earldouglas.com",
+    "url": "http://earldouglas.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/earldouglas/rundown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/earldouglas/rundown/issues"
+  },
+  "license": "MIT",
+  "bin": {
+    "rundown": "rundown"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "marked": "0.3.5"
+  },
+  "keywords": [
+    "markdown",
+    "literate programming"
+  ]
+}
