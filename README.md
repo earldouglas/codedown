@@ -1,6 +1,10 @@
 codedown is a little utility to extract code blocks from Markdown files.
-It is inspired by [literate Haskell][1], and can be used to validate the
-correctness of code embedded in Markdown.
+
+Inspired by [literate Haskell][1], codedown can be used to:
+
+* Validate the correctness of code embedded in Markdown
+* Run code embedded in Markdown
+* Ship code and Markdown together in harmony
 
 ## Quick start
 
