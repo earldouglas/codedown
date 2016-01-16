@@ -1,4 +1,4 @@
-codedown is a little utility to extract code blocks from Markdown files.
+Codedown is a little utility to extract code blocks from Markdown files.
 
 Inspired by [literate Haskell][1], codedown can be used to:
 
@@ -8,13 +8,19 @@ Inspired by [literate Haskell][1], codedown can be used to:
 
 ## Quick start
 
-First, install the marked library:
+Install codedown:
 
 ```
 $ npm install marked
 ```
 
-Then, run codedown:
+Make sure `./node_modules/.bin` is on your shell path:
+
+```
+$ export PATH=$PATH:./node_modules/.bin
+```
+
+Run codedown:
 
 ```
 $ ./codedown.js 
@@ -22,7 +28,7 @@ usage: codedown.js <markdown file> <lang>
 ex: codedown.js myfile.md haskell
 ```
 
-codedown extracts the code blocks designated as language `<lang>`, and
+Codedown extracts the code blocks designated as language `<lang>`, and
 outputs them to stdout.
 
 You can pipe the output of codedown to a language interpreter:
