@@ -30,6 +30,6 @@ if (process.argv.length === 4) {
   console.log(marked(content, { renderer: renderer }));
   
 } else {
-  console.log('usage: rundown <markdown file> <lang>');
-  console.log('ex: rundown myfile.md haskell');
+  console.log('usage: codedown <markdown file> <lang>');
+  console.log('ex: codedown myfile.md haskell');
 }
