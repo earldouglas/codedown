@@ -34,17 +34,17 @@ outputs them to stdout.
 You can pipe the output of codedown to a language interpreter:
 
 ```
-$ codedown README.md haskell | runhaskell
+$ cat README.md | codedown haskell | runhaskell
 42
 ```
 
 ```
-$ codedown README.md javascript | node
+$ cat README.md | codedown javascript | node
 42
 ```
 
 ```
-$ codedown README.md scala | scala
+$ cat README.md | codedown scala | scala
 scala> val x = 42
 x: Int = 42
 scala> println(x)
