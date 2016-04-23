@@ -8,6 +8,7 @@ if (process.argv.length === 3) {
   var lines = [];
 
   var rl = readline.createInterface({
+    terminal: false,
     input: process.stdin,
   });
 

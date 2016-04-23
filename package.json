@@ -29,5 +29,16 @@
   "keywords": [
     "markdown",
     "literate programming"
-  ]
+  ],
+  "devDependencies": {
+    "coveralls": "2.11.9",
+    "istanbul": "0.4.3",
+    "mocha": "2.4.5",
+    "mocha-lcov-reporter": "1.2.0"
+  },
+  "scripts": {
+    "test": "mocha",
+    "coverage": "istanbul cover _mocha -- -R spec",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
+  }
 }
