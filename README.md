@@ -1,4 +1,4 @@
-[!Build status](https://travis-ci.org/earldouglas/codedown.svg?branch=master)](https://travis-ci.org/earldouglas/codedown)
+[![Build status](https://travis-ci.org/earldouglas/codedown.svg?branch=master)](https://travis-ci.org/earldouglas/codedown)
 [![Coverage status](https://coveralls.io/repos/github/earldouglas/codedown/badge.svg?branch=master)](https://coveralls.io/github/earldouglas/codedown?branch=master)
 
 Codedown is a little utility to extract code blocks from Markdown files.
