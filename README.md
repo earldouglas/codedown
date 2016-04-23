@@ -11,7 +11,7 @@ Inspired by [literate Haskell][1], codedown can be used to:
 Install codedown:
 
 ```
-$ npm install marked
+$ npm install codedown
 ```
 
 Make sure `./node_modules/.bin` is on your shell path:
@@ -23,9 +23,9 @@ $ export PATH=$PATH:./node_modules/.bin
 Run codedown:
 
 ```
-$ ./codedown.js 
-usage: codedown.js <markdown file> <lang>
-ex: codedown.js myfile.md haskell
+$ codedown
+usage: codedown <markdown file> <lang>
+ex: codedown myfile.md haskell
 ```
 
 Codedown extracts the code blocks designated as language `<lang>`, and
@@ -34,17 +34,17 @@ outputs them to stdout.
 You can pipe the output of codedown to a language interpreter:
 
 ```
-$ ./codedown.js README.md haskell | runhaskell
+$ codedown README.md haskell | runhaskell
 42
 ```
 
 ```
-$ ./codedown.js README.md javascript | node
+$ codedown README.md javascript | node
 42
 ```
 
 ```
-$ ./codedown.js README.md scala | scala
+$ codedown README.md scala | scala
 scala> val x = 42
 x: Int = 42
 scala> println(x)
