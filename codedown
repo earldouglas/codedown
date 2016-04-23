@@ -16,16 +16,26 @@ if (process.argv.length === 4) {
     return language === lang ? code + '\n\n' : '';
   };
 
-  renderer.blockquote = function (quote) { return ''; };
-  renderer.html = function (html) { return ''; };
-  renderer.heading = function (text, level) { return ''; };
-  renderer.hr = function () { return ''; };
-  renderer.list = function (body, ordered) { return body; };
-  renderer.listitem = function (text) { return text; };
-  renderer.paragraph = function (text) { return ''; };
-  renderer.table = function (header, body) { return ''; };
-  renderer.tablerow = function (content) { return ''; };
-  renderer.tablecell = function (content, flags) { return ''; };
+  var nope = function () { return ''; };
+
+  renderer.blockquote  = nope;
+  renderer.br          = nope;
+  renderer.codespan    = nope;
+  renderer.del         = nope;
+  renderer.em          = nope;
+  renderer.heading     = nope;
+  renderer.hr          = nope;
+  renderer.html        = nope;
+  renderer.image       = nope;
+  renderer.link        = nope;
+  renderer.list        = nope;
+  renderer.listitem    = nope;
+  renderer.paragraph   = nope;
+  renderer.strong      = nope;
+  renderer.table       = nope;
+  renderer.tablecell   = nope;
+  renderer.tablerow    = nope;
+  renderer.text        = nope;
 
   console.log(marked(content, { renderer: renderer }));
   
