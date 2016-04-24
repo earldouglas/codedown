@@ -21,12 +21,12 @@ Run codedown:
 
 ```
 $ codedown
-usage: codedown <markdown file> <lang>
-ex: codedown myfile.md haskell
+usage: codedown <lang>
+ex: codedown haskell
 ```
 
-Codedown extracts the code blocks designated as language `<lang>`, and
-outputs them to stdout.
+Codedown reads Markdown from stin, extracts the code blocks designated
+as language `<lang>`, and outputs them to stdout.
 
 You can pipe the output of codedown to a language interpreter:
 
