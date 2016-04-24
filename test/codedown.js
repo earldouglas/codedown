@@ -32,8 +32,6 @@ describe('codedown', function(){
           , 'main :: IO ()'
           , 'main = putStrLn $ show x'
           , ''
-          , ''
-          , ''
           ].join('\n'),
           stdout
         );

@@ -5,7 +5,7 @@ var readline = require('readline');
 
 if (process.argv.length === 3) {
 
-  var lines = [];
+  var source = [];
 
   var rl = readline.createInterface({
     terminal: false,
@@ -13,7 +13,7 @@ if (process.argv.length === 3) {
   });
 
   rl.on('line', function (line) {
-    lines.push(line);
+    source.push(line);
   });
 
   rl.on('close', function () {
@@ -22,33 +22,21 @@ if (process.argv.length === 3) {
 
     var renderer = new marked.Renderer();
 
-    renderer.code = function (code, language) {
-      return language === lang ? code + '\n\n' : '';
-    };
+    for (var i in renderer) {
+      if ("function" === typeof renderer[i]) {
+        renderer[i] = function () { return ''; };
+      }
+    }
 
-    var nope = function () { return ''; };
+    renderer.code =
+      function (code, language) {
+        return language === lang ? code + '\n\n' : '';
+      };
 
-    renderer.blockquote  = nope;
-    renderer.br          = nope;
-    renderer.codespan    = nope;
-    renderer.del         = nope;
-    renderer.em          = nope;
-    renderer.heading     = nope;
-    renderer.hr          = nope;
-    renderer.html        = nope;
-    renderer.image       = nope;
-    renderer.link        = nope;
-    renderer.list        = nope;
-    renderer.listitem    = nope;
-    renderer.paragraph   = nope;
-    renderer.strong      = nope;
-    renderer.table       = nope;
-    renderer.tablecell   = nope;
-    renderer.tablerow    = nope;
-    renderer.text        = nope;
+    var output = marked(source.join('\n'), { renderer: renderer });
+    output = output.replace(/\n+$/g, '');
 
-    var content = lines.join('\n');
-    console.log(marked(content, { renderer: renderer }));
+    console.log(output);
 
   });
 
