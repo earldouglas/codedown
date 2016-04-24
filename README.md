@@ -14,13 +14,7 @@ Inspired by [literate Haskell][1], codedown can be used to:
 Install codedown:
 
 ```
-$ npm install codedown
-```
-
-Make sure `./node_modules/.bin` is on your shell path:
-
-```
-$ export PATH=$PATH:./node_modules/.bin
+$ npm install -g codedown
 ```
 
 Run codedown:
