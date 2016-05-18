@@ -9,6 +9,8 @@ Inspired by [literate Haskell][1], codedown can be used to:
 * Run code embedded in Markdown
 * Ship code and Markdown together in harmony
 
+![](codedown.gif)
+
 ## Quick start
 
 Install codedown:
