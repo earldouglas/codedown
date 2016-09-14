@@ -29,9 +29,12 @@ if (process.argv.length === 3) {
     }
 
     renderer.code =
-      function (code, language) {
-        return language === lang ? code + '\n\n' : '';
+      function (src, language, escaped) {
+        return language === lang ? src + '\n\n' : '';
       };
+
+    renderer.listitem = function (text) { return text; };
+    renderer.list = function (body, ordered) { return body; };
 
     var output = marked(source.join('\n'), { renderer: renderer });
     output = output.replace(/\n+$/g, '');

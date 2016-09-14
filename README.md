@@ -78,25 +78,26 @@ var x = 42;
 val x = 42
 ```
 
-Now let's print `x` it to stdout in different languages:
+Now let's print `x` it to stdout in different languages.  This time, the
+code blocks are nested in an unordered list:
 
-*Haskell:*
+* *Haskell:*
 
-```haskell
-main :: IO ()
-main = putStrLn $ show x
-```
+  ```haskell
+  main :: IO ()
+  main = putStrLn $ show x
+  ```
 
-*JavaScript:*
+* *JavaScript:*
 
-```javascript
-console.log(x);
-```
+  ```javascript
+  console.log(x);
+  ```
 
-*Scala:*
+* *Scala:*
 
-```scala
-println(x)
-```
+  ```scala
+  println(x)
+  ```
 
 [1]: https://wiki.haskell.org/Literate_programming

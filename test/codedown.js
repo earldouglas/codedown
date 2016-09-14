@@ -26,14 +26,14 @@ describe('codedown', function(){
     process.exec('cat README.md | ./codedown.js haskell', function (err, stdout, stderr) {
       if (!err) {
         assert.equal(
+          stdout,
           [ 'x :: Int'
           , 'x = 42'
           , ''
           , 'main :: IO ()'
           , 'main = putStrLn $ show x'
           , ''
-          ].join('\n'),
-          stdout
+          ].join('\n')
         );
         done();
       } else {
