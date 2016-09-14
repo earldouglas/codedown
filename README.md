@@ -78,8 +78,9 @@ var x = 42;
 val x = 42
 ```
 
-Now let's print `x` it to stdout in different languages.  This time, the
-code blocks are nested in an unordered list:
+Now let's print `x` it to stdout in different languages.
+
+This time, the code blocks are nested within an unordered list:
 
 * *Haskell:*
 
