@@ -19,6 +19,7 @@
   "bin": {
     "codedown": "./codedown.js"
   },
+  "main": "lib/codedown.js",
   "engines": {
     "node": ">= 0.10.0"
   },
