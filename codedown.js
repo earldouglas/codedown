@@ -8,16 +8,12 @@ if (process.argv.length === 3) {
 
   var source = [];
 
-  var rl = readline.createInterface({
+  readline.createInterface({
     terminal: false,
     input: process.stdin,
-  });
-
-  rl.on('line', function (line) {
+  }).on('line', function (line) {
     source.push(line);
-  });
-
-  rl.on('close', function () {
+  }).on('close', function () {
     var lang = process.argv[2];
     output = codedown(source.join('\n'), lang);
     console.log(output);
