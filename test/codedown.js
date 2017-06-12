@@ -40,4 +40,18 @@ describe('codedown', function(){
     });
   });
 
+  it('should extract code with wildcard', function (done) {
+    process.exec('cat README.md | ./codedown.js "**/*.js"', function (err, stdout, stderr) {
+      if (!err) {
+        assert.equal(
+          stdout,
+          'var x = 42;\n'
+        );
+        done();
+      } else {
+        console.log(stderr);
+      }
+    });
+  });
+
 });
