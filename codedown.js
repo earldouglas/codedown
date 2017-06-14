@@ -4,7 +4,7 @@ var marked   = require('marked');
 var readline = require('readline');
 var codedown = require('./lib/codedown.js');
 
-if (process.argv.length === 3) {
+if (process.argv.length >= 3) {
 
   var source = [];
 
@@ -15,11 +15,12 @@ if (process.argv.length === 3) {
     source.push(line);
   }).on('close', function () {
     var lang = process.argv[2];
-    output = codedown(source.join('\n'), lang);
+    var separator = process.argv[3];
+    output = codedown(source.join('\n'), lang, separator);
     console.log(output);
   });
 
 } else {
-  console.log('usage: codedown <lang>');
+  console.log('usage: codedown <lang> [<separator>]');
   console.log('ex: codedown haskell');
 }

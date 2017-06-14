@@ -105,5 +105,40 @@ This time, the code blocks are nested within an unordered list:
   println(x)
   ```
 
+## Wildcard matching
+
+Codedown can use wildcards to match file paths, which are used by some markdown implementations:
+
+* *lib/codedown.js*
+
+```lib/codedown.js
+var x = 42;
+```
+
+```
+$ cat README.md | codedown '**/*.js'
+var x = 42
+```
+
+## Separator
+
+If there are multiple code blocks in the same file, you can specify a separator as the third argument:
+
+```java
+System.out.println("hello")
+```
+
+```java
+System.out.println("world")
+```
+
+```
+$ cat README.md | codedown java -----
+System.out.println("hello")
+-----
+System.out.println("world")
+-----
+```
+
 [1]: https://wiki.haskell.org/Literate_programming
 [2]: https://earldouglas.com/posts/codedown.html
