@@ -1,7 +1,3 @@
-% Codedown
-% James Earl Douglas
-% October 31, 2016
-
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/marked/lib/marked.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/codedown/lib/codedown.js"></script>
 <script type="text/javascript">
@@ -40,7 +36,7 @@
   }
   textarea {
     width: 72ex;
-    height: 32em;
+    height: 35em;
   }
   pre#output {
     border-left: 2px solid #ccc;
@@ -53,7 +49,7 @@ This is a simple in-browser demo of
 [Codedown](https://github.com/earldouglas/codedown).
 
 Type some Markdown in the `textarea` below, choose a language to
-extract, and hit `Extract` to run it through Codedown.
+extract, and hit *[Extract]* to run it through Codedown.
 
 <form onsubmit="return demo();">
  <div class="table">
