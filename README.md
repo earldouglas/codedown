@@ -106,4 +106,4 @@ This time, the code blocks are nested within an unordered list:
   ```
 
 [1]: https://wiki.haskell.org/Literate_programming
-[2]: https://earldouglas.com/posts/codedown.html
+[2]: http://earldouglas.github.io/codedown/
