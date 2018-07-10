@@ -36,7 +36,7 @@
   }
   textarea {
     width: 72ex;
-    height: 35em;
+    height: 36em;
   }
   pre#output {
     border-left: 2px solid #ccc;
