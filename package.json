@@ -1,7 +1,7 @@
 {
   "name": "codedown",
   "description": "Extract and run code blocks from Markdown files",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "homepage": "https://github.com/earldouglas/codedown",
   "author": {
     "name": "James Earl Douglas",
