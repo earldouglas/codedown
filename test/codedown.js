@@ -1,5 +1,3 @@
-'use strict';
-
 var assert  = require('assert');
 var process = require('child_process');
 
