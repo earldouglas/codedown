@@ -34,12 +34,13 @@
   "devDependencies": {
     "coveralls": "3.0.0",
     "istanbul": "0.4.5",
+    "jshint": "^2.9.4",
     "mocha": "4.1.0",
     "mocha-lcov-reporter": "1.3.0"
   },
   "scripts": {
-    "test": "mocha",
-    "coverage": "istanbul cover _mocha -- -R spec",
+    "test": "jshint . --exclude node_modules && mocha",
+    "coverage": "istanbul cover -no-default-excludes -x '**/node_modules/**' _mocha -- -R spec",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   }
 }
