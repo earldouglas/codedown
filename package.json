@@ -38,6 +38,9 @@
     "mocha": "4.1.0",
     "mocha-lcov-reporter": "1.3.0"
   },
+  "jshintConfig": {
+    "laxcomma": true
+  },
   "scripts": {
     "test": "jshint . --exclude node_modules && mocha",
     "coverage": "istanbul cover -no-default-excludes -x '**/node_modules/**' _mocha -- -R spec",
