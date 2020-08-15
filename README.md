@@ -47,12 +47,8 @@ $ cat README.md | codedown javascript | node
 ```
 
 ```
-$ cat README.md | codedown scala | scala
-scala> val x = 42
-x: Int = 42
-scala> println(x)
+$ cat README.md | codedown scala | xargs -0 scala -e
 42
-scala> :quit
 ```
 
 ## Examples
