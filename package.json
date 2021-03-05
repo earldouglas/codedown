@@ -24,7 +24,7 @@
     "node": ">= 0.10.0"
   },
   "dependencies": {
-    "marked": "1.1.1",
+    "marked": "2.0.1",
     "readline": "1.3.0"
   },
   "keywords": [
@@ -34,8 +34,8 @@
   "devDependencies": {
     "coveralls": "3.0.0",
     "istanbul": "0.4.5",
-    "jshint": "^2.9.4",
-    "mocha": "4.1.0",
+    "jshint": "2.9.4",
+    "mocha": "8.3.0",
     "mocha-lcov-reporter": "1.3.0"
   },
   "jshintConfig": {
