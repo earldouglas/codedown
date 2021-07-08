@@ -1,5 +1,13 @@
-![Build Status](https://github.com/earldouglas/codedown/workflows/build/badge.svg)
-[![Coverage status](https://coveralls.io/repos/github/earldouglas/codedown/badge.svg)](https://coveralls.io/github/earldouglas/codedown)
+[![Build Status][build-badge]][build-link]
+[![Coverage Status][coverage-badge]][coverage-link]
+[![npm version][release-badge]][release-link]
+
+[build-badge]: https://github.com/earldouglas/codedown/workflows/build/badge.svg
+[build-link]: https://github.com/earldouglas/codedown/actions
+[coverage-badge]: https://coveralls.io/repos/github/earldouglas/codedown/badge.svg
+[coverage-link]: https://coveralls.io/github/earldouglas/codedown
+[release-badge]: https://badge.fury.io/js/codedown.svg
+[release-link]: https://www.npmjs.com/package/codedown
 
 Codedown is a little utility to extract code blocks from Markdown files.
 
