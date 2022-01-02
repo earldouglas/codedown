@@ -109,5 +109,20 @@ This time, the code blocks are nested within an unordered list:
   println(x)
   ```
 
+## Wildcard matching
+
+Codedown can use wildcards to match file paths, which are used by some markdown implementations:
+
+* *lib/codedown.js*
+
+```lib/codedown.js
+var x = 42;
+```
+
+```
+$ cat README.md | codedown '**/*.js'
+var x = 42
+```
+
 [1]: https://wiki.haskell.org/Literate_programming
 [2]: http://earldouglas.github.io/codedown/
