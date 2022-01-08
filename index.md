@@ -1,5 +1,5 @@
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/marked/lib/marked.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/codedown/lib/codedown.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/marked@0.3.9/marked.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/codedown@2.1.5/lib/codedown.js"></script>
 <script type="text/javascript">
   function demo() {
     var src = document.getElementById('src').value;
