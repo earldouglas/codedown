@@ -9,9 +9,12 @@
 [release-badge]: https://badge.fury.io/js/codedown.svg
 [release-link]: https://www.npmjs.com/package/codedown
 
-Codedown is a little utility to extract code blocks from Markdown files.
+# Codedown
 
-Inspired by [literate Haskell][1], codedown can be used to:
+Codedown is a little utility to extract code blocks from Markdown files.
+Inspired by [literate
+Haskell](https://wiki.haskell.org/Literate_programming), Codedown can be
+used to:
 
 * Validate the correctness of code embedded in Markdown
 * Run code embedded in Markdown
@@ -21,28 +24,44 @@ Inspired by [literate Haskell][1], codedown can be used to:
 
 ## Quicker start
 
-To skip installing codedown locally, [try it online][2].
+To skip installing Codedown locally, [try it
+online](https://earldouglas.github.io/codedown/).
 
 ## Quick start
 
-Install codedown:
+Install Codedown:
 
 ```
 $ npm install -g codedown
 ```
 
-Run codedown:
+Run Codedown:
 
 ```
-$ codedown
-usage: codedown <lang>
-ex: codedown haskell
+Usage: codedown <lang> [...]
+
+Options:
+--separator <separator line>
+--section <section number>
+
+Example:
+cat README.md | codedown haskell --separator=----- --section 1.3
 ```
 
 Codedown reads Markdown from stin, extracts the code blocks designated
-as language `<lang>`, and outputs them to stdout.
+as language `<lang>`, and outputs them to stdout.  The example above
+extracts the Haskell code from section 1.3 of this file, and outputs it
+with five dashes in between each block:
 
-You can pipe the output of codedown to a language interpreter:
+```
+x :: Int
+x = 42
+-----
+main :: IO ()
+main = putStrLn $ show x
+```
+
+We can pipe the output of Codedown to a language interpreter:
 
 ```
 $ cat README.md | codedown haskell | runhaskell
@@ -61,8 +80,10 @@ $ cat README.md | codedown scala | xargs -0 scala -e
 
 ## Examples
 
-This readme is a Markdown file, so we can use codedown to extract code
+This readme is a Markdown file, so we can use Codedown to extract code
 from it.
+
+### Variables in different languages
 
 In the following code blocks, let's set `x` to 42 in different
 languages:
@@ -86,9 +107,10 @@ var x = 42;
 val x = 42
 ```
 
-Now let's print `x` it to stdout in different languages.
+### Console output in different languages
 
-This time, the code blocks are nested within an unordered list:
+Now let's print `x` it to stdout in different languages.  This time, the
+code blocks are nested within an unordered list:
 
 * *Haskell:*
 
@@ -109,9 +131,37 @@ This time, the code blocks are nested within an unordered list:
   println(x)
   ```
 
+## Sections and subsections
+
+The section above is 1.3, counting by headings.  It has two subsections
+(1.3.1 and 1.3.2).  We can specify a section to extract the content from
+just that section:
+
+```
+$ cat README.md | codedown haskell --section 1.3
+x :: Int
+x = 42
+
+main :: IO ()
+main = putStrLn $ show x
+```
+
+```
+$ cat README.md | codedown haskell --section 1.3.1
+x :: Int
+x = 42
+```
+
+```
+$ cat README.md | codedown haskell --section 1.3.2
+main :: IO ()
+main = putStrLn $ show x
+```
+
 ## Wildcard matching
 
-Codedown can use wildcards to match file paths, which are used by some markdown implementations:
+Codedown can use wildcards to match file paths, which are used by some
+markdown implementations:
 
 * *lib/codedown.js*
 
@@ -126,23 +176,14 @@ var x = 42
 
 ## Separator
 
-If there are multiple code blocks in the same file, you can specify a separator as the third argument:
-
-```java
-System.out.println("hello")
-```
-
-```java
-System.out.println("world")
-```
+If there are multiple code blocks in the same file, we can specify a
+separator to insert in between them:
 
 ```
-$ cat README.md | codedown java -----
-System.out.println("hello")
+$ cat README.md | codedown haskell --separator=-----
+x :: Int
+x = 42
 -----
-System.out.println("world")
------
+main :: IO ()
+main = putStrLn $ show x
 ```
-
-[1]: https://wiki.haskell.org/Literate_programming
-[2]: http://earldouglas.github.io/codedown/
