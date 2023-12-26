@@ -163,7 +163,7 @@ main = putStrLn $ show x
 Codedown can use wildcards to match file paths, which are used by some
 markdown implementations:
 
-* *lib/codedown.js*
+*lib/codedown.js:*
 
 ```lib/codedown.js
 var x = 42;
