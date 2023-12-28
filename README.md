@@ -134,8 +134,8 @@ code blocks are nested within an unordered list:
 ## Sections and subsections
 
 The section above is 1.3, counting by headings.  It has two subsections
-(1.3.1 and 1.3.2).  We can specify a section to extract the content from
-just that section:
+(1.3.1 and 1.3.2).  We can specify a section number to extract the
+content from just that section:
 
 ```
 $ cat README.md | codedown haskell --section 1.3
@@ -156,6 +156,14 @@ x = 42
 $ cat README.md | codedown haskell --section 1.3.2
 main :: IO ()
 main = putStrLn $ show x
+```
+
+We can also specify a section by heading:
+
+```
+cat README.md | ./codedown.js haskell --section '### Variables in different languages'
+x :: Int
+x = 42
 ```
 
 ## Wildcard matching
