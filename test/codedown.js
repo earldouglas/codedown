@@ -208,4 +208,32 @@ describe('codedown', function(){
     });
   });
 
+  it('should extract any code if language is *', function (done) {
+    process.exec('cat README.md | ./codedown.js "*"', function (err, stdout, stderr) {
+      if (!err) {
+        assert.equal(
+          stdout,
+          [ 'x :: Int'
+          , 'x = 42'
+          , ''
+          , 'var x = 42;'
+          , ''
+          , 'val x = 42'
+          , ''
+          , 'main :: IO ()'
+          , 'main = putStrLn $ show x'
+          , ''
+          , 'console.log(x);'
+          , ''
+          , 'println(x)'
+          , ''
+          ].join('\n')
+        );
+        done();
+      } else {
+        console.log(stderr);
+      }
+    });
+  });
+
 });
