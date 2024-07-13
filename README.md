@@ -182,6 +182,13 @@ $ cat README.md | codedown '**/*.js'
 var x = 42
 ```
 
+Additionally, you can use a special `*` character in place of the language
+option to extract any/all code blocks agnostic of language:
+
+```
+$ cat README.md | codedown '*'
+```
+
 ## Separator
 
 If there are multiple code blocks in the same file, we can specify a
