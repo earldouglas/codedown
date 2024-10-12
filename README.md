@@ -131,6 +131,34 @@ code blocks are nested within an unordered list:
   println(x)
   ```
 
+### Docker
+
+Assuming a file called `example.md` with this content:
+
+```
+    ## A title
+
+    ```shell
+    echo "First line..."
+    ```
+
+    A standard line.
+
+    ```shell
+    echo "Second line"
+    ```
+```
+
+Build and run a docker image:
+```
+docker build -t codedown:dev .
+```
+
+Use it to extract `shell` snippets and save in `output.sh`:
+```
+cat example.md | docker run -i codedown:dev shell > output.sh
+```
+
 ## Sections and subsections
 
 The section above is 1.3, counting by headings.  It has two subsections
