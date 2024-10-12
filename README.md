@@ -133,30 +133,16 @@ code blocks are nested within an unordered list:
 
 ### Docker
 
-Assuming a file called `example.md` with this content:
+Build and run a Docker image:
 
-```
-    ## A title
-
-    ```shell
-    echo "First line..."
-    ```
-
-    A standard line.
-
-    ```shell
-    echo "Second line"
-    ```
-```
-
-Build and run a docker image:
 ```
 docker build -t codedown:dev .
 ```
 
-Use it to extract `shell` snippets and save in `output.sh`:
+Use it to extract `haskell` code blocks and save to `output.hs`:
+
 ```
-cat example.md | docker run -i codedown:dev shell > output.sh
+cat README.md | docker run -i codedown:dev haskell > output.hs
 ```
 
 ## Sections and subsections
