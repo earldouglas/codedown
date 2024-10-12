@@ -1,5 +1,10 @@
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/marked@0.3.9/marked.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/codedown@2.1.5/lib/codedown.js"></script>
+<script type="text/javascript">
+  window.module = {};
+  window.require = function () {};
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/minimatch@3.1.2/minimatch.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/codedown@3.2.1/lib/codedown.js"></script>
 <script type="text/javascript">
   function demo() {
     var src = document.getElementById('src').value;
