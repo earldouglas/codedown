@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x, 17.x] # https://nodejs.org/en/about/releases/#releases
+        node-version: [20, 22, 24] # https://nodejs.org/en/about/releases/#releases
 
     steps:
     - uses: actions/checkout@v1
