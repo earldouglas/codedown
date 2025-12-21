@@ -38,13 +38,14 @@
     "istanbul": "0.4.5",
     "jshint": "2.13.6",
     "mocha": "11.7.1",
-    "mocha-lcov-reporter": "1.3.0"
+    "mocha-lcov-reporter": "1.3.0",
+    "prettier": "3.7.4"
   },
   "jshintConfig": {
     "laxcomma": true
   },
   "scripts": {
-    "test": "jshint lib && jshint test && mocha",
+    "test": "jshint -c .jshintrc lib && jshint -c .jshintrc test && prettier -c lib && prettier -c test && mocha",
     "coverage": "istanbul cover -no-default-excludes -x '**/node_modules/**' _mocha -- -R spec",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   }
