@@ -154,6 +154,26 @@ describe('codedown', function(){
     });
   });
 
+  it('should extract code by multiple section numbers', function (done) {
+    process.exec('cat README.md | ./codedown.js haskell --section 1.3.1 --section 1.3.2', function (err, stdout, stderr) {
+      if (!err) {
+        assert.equal(
+          stdout,
+          [ 'x :: Int'
+          , 'x = 42'
+          , ''
+          , 'main :: IO ()'
+          , 'main = putStrLn $ show x'
+          , ''
+          ].join('\n')
+        );
+        done();
+      } else {
+        console.log(stderr);
+      }
+    });
+  });
+
   it('should extract code by section name (## Examples)', function (done) {
     process.exec('cat README.md | ./codedown.js haskell --section "## Examples"', function (err, stdout, stderr) {
       if (!err) {
@@ -206,6 +226,29 @@ describe('codedown', function(){
         console.log(stderr);
       }
     });
+  });
+
+  it('should extract code by multiple section names', function (done) {
+    process.exec(
+      'cat README.md | ./codedown.js haskell --section "### Variables in different languages" --section "### Console output in different languages"',
+      function (err, stdout, stderr) {
+        if (!err) {
+          assert.equal(
+            stdout,
+            [ 'x :: Int'
+            , 'x = 42'
+            , ''
+            , 'main :: IO ()'
+            , 'main = putStrLn $ show x'
+            , ''
+            ].join('\n')
+          );
+          done();
+        } else {
+          console.log(stderr);
+        }
+      }
+    );
   });
 
   it('should extract any code if language is *', function (done) {
