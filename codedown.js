@@ -7,7 +7,7 @@ var arg      = require('arg');
 var args =
   arg({
     '--separator': String,
-    '--section': String,
+    '--section': [String],
   });
 
 if (process.argv.length >= 3) {
@@ -22,8 +22,8 @@ if (process.argv.length >= 3) {
   }).on('close', function () {
     var lang = process.argv[2];
     var separator = args['--separator'];
-    var section = args['--section'];
-    output = codedown(source.join('\n'), lang, separator, section);
+    var sections = args['--section'];
+    output = codedown(source.join('\n'), lang, separator, sections);
     console.log(output);
   });
 
