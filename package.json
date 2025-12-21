@@ -44,7 +44,7 @@
     "laxcomma": true
   },
   "scripts": {
-    "test": "jshint . --exclude node_modules && mocha",
+    "test": "jshint lib && jshint test && mocha",
     "coverage": "istanbul cover -no-default-excludes -x '**/node_modules/**' _mocha -- -R spec",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   }
